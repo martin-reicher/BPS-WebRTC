@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BPS Project</title>
+
+        <style type="text/css">
+            body {
+                margin: 0;
+                font-size: 20px;
+                background-color: rgb(0, 0, 0);
+                color: white;
+            }
+
+            .noselect {
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+            }
+
+            section {
+                text-align: center;
+            }
+
+            .cell-container {
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+                width: 306px;
+                margin: 50px auto;
+            }
+
+            .cell {
+                font-family: "Permanent Marker", cursive;
+                width: 100px;
+                height: 100px;
+                box-shadow: 0 0 0 1px #333333;
+                border: 1px solid #333333;
+                cursor: pointer;
+
+                line-height: 100px;
+                font-size: 60px;
+            }
+
+            label {
+                color: rgb(255, 255, 255);
+                font-family: "Roboto", sans-serif;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+            }
+
+            #game-status {
+                font-family: "Roboto", sans-serif;
+            }
+
+            #game-restart {
+                border: none;
+                border-radius: 10px;
+                padding: 5px 10px 5px 10px;
+            }
+        </style>
+    </head>
+    <body class="noselect">
+        <label id="waiting" class="noselect"
+            >Waiting for somebody to join...</label
+        ><br />
+        <section>
+            <div
+                id="game-container"
+                class="game-container"
+                style="display: none"
+            >
+                <div class="cell-container">
+                    <div data-cell-index="0" class="cell"></div>
+                    <div data-cell-index="1" class="cell"></div>
+                    <div data-cell-index="2" class="cell"></div>
+                    <div data-cell-index="3" class="cell"></div>
+                    <div data-cell-index="4" class="cell"></div>
+                    <div data-cell-index="5" class="cell"></div>
+                    <div data-cell-index="6" class="cell"></div>
+                    <div data-cell-index="7" class="cell"></div>
+                    <div data-cell-index="8" class="cell"></div>
+                </div>
+
+                <h2 id="game-status"></h2>
+                <button id="game-restart">Restart Game</button>
+            </div>
+        </section>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="../assets/games.js"></script>
+    </body>
+</html>

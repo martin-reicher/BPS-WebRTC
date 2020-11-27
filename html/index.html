@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+            rel="stylesheet"
+        />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BPS Project</title>
+
+        <style type="text/css">
+            body {
+                font-size: 20px;
+                background-color: rgb(0, 0, 0);
+                margin: 0;
+            }
+
+            .enter-name {
+                color: rgb(255, 255, 255);
+                font-family: "Roboto", sans-serif;
+            }
+
+            .centered {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            #room-input {
+                position: absolute;
+                width: 100%;
+                border-radius: 10px;
+                padding: 5px 5px 5px 5px;
+            }
+
+            #connect-button {
+                position: relative;
+                top: 50px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: none;
+                border-radius: 10px;
+                padding: 5px 10px 5px 10px;
+            }
+
+            .noselect {
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+            }
+
+            .radio-select-label {
+                color: black;
+                padding: 5px 5px 5px 5px;
+                background-color: white;
+                font-family: "Open Sans", sans-serif;
+                border-radius: 10px;
+                width: 65px;
+                text-align: center;
+            }
+
+            input[type="radio"]:checked + label {
+                background-color: #00ff00;
+            }
+
+            .radio-select {
+                position: relative;
+                top: 30px;
+            }
+
+            .radio-select-button {
+                display: none;
+            }
+
+            .label-video {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 13%;
+            }
+
+            .label-games {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 50%;
+            }
+
+            .label-text {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 87%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="room-selection-container" class="centered noselect">
+            <label class="noselect enter-name" id="enter-name"
+                >Please enter a name for the room</label
+            ><br />
+            <input id="room-input" type="text" /><br />
+            <div class="radio-select noselect">
+                <input
+                    class="radio-select-button"
+                    type="radio"
+                    id="video"
+                    name="mode"
+                    onchange="checkActive()"
+                />
+                <label
+                    class="noselect radio-select-label label-video"
+                    for="video"
+                    >Video</label
+                >
+                <input
+                    class="radio-select-button"
+                    type="radio"
+                    id="games"
+                    name="mode"
+                    onchange="checkActive()"
+                />
+                <label
+                    class="noselect radio-select-label label-games"
+                    for="games"
+                    >Games</label
+                >
+                <input
+                    class="radio-select-button"
+                    type="radio"
+                    id="text"
+                    name="mode"
+                    onchange="checkActive()"
+                />
+                <label class="noselect radio-select-label label-text" for="text"
+                    >Text</label
+                ><br />
+            </div>
+            <button class="noselect" id="connect-button">CONNECT</button>
+        </div>
+        <script type="text/javascript" src="assets/index.js"></script>
+    </body>
+</html>

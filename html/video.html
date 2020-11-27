@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BPS Project</title>
+
+        <style type="text/css">
+            body {
+                margin: 0;
+                font-size: 20px;
+                background-color: rgb(0, 0, 0);
+            }
+
+            label {
+                color: rgb(255, 255, 255);
+                font-family: "Roboto", sans-serif;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+            }
+
+            .video-position {
+                position: absolute;
+                top: 35%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            #video-chat-container {
+                width: 100%;
+            }
+
+            .remote-video {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0px;
+            }
+
+            .local-video {
+                position: absolute;
+                max-height: 200px;
+                right: 30px;
+                bottom: 30px;
+                border-radius: 10px;
+            }
+
+            .noselect {
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="video-chat-container">
+            <video
+                class="video remote-video"
+                id="remote-video"
+                autoplay="autoplay"
+            ></video>
+            <video
+                class="video local-video"
+                id="local-video"
+                autoplay="autoplay"
+                muted
+            ></video>
+            <label id="waiting" class="noselect"
+                >Waiting for somebody to join...</label
+            ><br />
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="../assets/video.js"></script>
+    </body>
+</html>

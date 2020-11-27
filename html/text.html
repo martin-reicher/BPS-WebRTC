@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BPS Project</title>
+
+        <style type="text/css">
+            body {
+                margin: 0;
+                font-size: 20px;
+                background-color: rgb(0, 0, 0);
+                margin: 0;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .noselect {
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+            }
+
+            .message-form {
+                position: absolute;
+                bottom: 0%;
+                width: 100%;
+            }
+
+            #message-input {
+                position: absolute;
+                width: 94%;
+                bottom: 5px;
+                padding: 5px 10px 5px 10px;
+            }
+
+            #send-button {
+                position: relative;
+                transform: translateX(-100%);
+                bottom: 5px;
+                left: 100%;
+                border: none;
+                border-radius: 10px;
+                padding: 7.5px 16px 7.5px 16px;
+            }
+
+            .message-container {
+                position: absolute;
+                max-height: 95%;
+                width: 100%;
+                overflow: auto;
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .message-container > span {
+                color: white;
+                font-family: "Roboto", sans-serif;
+            }
+
+            .message-you {
+                color: #55ff00;
+            }
+
+            .message-stranger {
+                color: #5100ff;
+            }
+        </style>
+    </head>
+    <div class="message-container" id="message-container"></div>
+    <div class="message-form">
+        <form>
+            <input id="message-input" type="text" />
+            <button class="noselect" id="send-button" disabled>SEND</button>
+        </form>
+    </div>
+    <body>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="../assets/text.js"></script>
+    </body>
+</html>
